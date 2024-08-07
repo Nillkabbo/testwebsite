@@ -16,17 +16,21 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '21.7.3'  # Specify your project's Node.js version
+          node-version: '18'  # Use a stable LTS version like 18
 
       - name: Install dependencies
         run: npm install
 
+      - name: Lint the code
+        run: npm run lint
+
       - name: Build the React app
-        run: SKIP_PREFLIGHT_CHECK=true npm run build
+        run: npm run build
         env:
-          CI: false  # Prevent treating warnings as errors
+          CI: false
+          SKIP_PREFLIGHT_CHECK: true
 
       - name: Deploy to GitHub Pages
         run: npm run deploy
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Pass the GitHub token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
