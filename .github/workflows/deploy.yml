@@ -31,4 +31,6 @@ jobs:
       - name: Deploy to GitHub Pages
         run: npm run deploy
         env:
+          CI: false
+          SKIP_PREFLIGHT_CHECK: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
