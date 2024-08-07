@@ -16,11 +16,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '18'  # Use a stable LTS version like 18
+          node-version: '18'  # Use a stable LTS version
 
       - name: Install dependencies
         run: npm install
-
 
       - name: Build the React app
         run: npm run build
@@ -29,8 +28,7 @@ jobs:
           SKIP_PREFLIGHT_CHECK: true
 
       - name: Deploy to GitHub Pages
-        run: npm run deploy
-        env:
-          CI: false
-          SKIP_PREFLIGHT_CHECK: true
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
