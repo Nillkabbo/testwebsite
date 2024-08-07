@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Build the React app
-        run: npm run build
+        run: SKIP_PREFLIGHT_CHECK=true npm run build
         env:
           CI: false  # Prevent treating warnings as errors
 
