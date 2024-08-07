@@ -1,0 +1,39 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  width: 100%;
+  /*max-width: 1200px;*/
+  max-width: var(--max-content-width); /* Use the CSS variable for max width */
+  margin: 0 auto; /* Center the container */
+}
+.header{
+  position: absolute;
+  top: 0;
+}
+
+.resource1Background {
+  background-color: rgba(9, 12, 35, 0.2); /* Change to your desired background color */
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    /*padding: 1px;*/
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    /*padding: 1px;*/
+  }
+}
+
+@media (min-width: 1025px) {
+  .container {
+    /*padding: 2px;*/
+  }
+}
