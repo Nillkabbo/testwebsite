@@ -2,7 +2,7 @@
   "name": "website-nillkabbo",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://Nillkabbo.github.io/website-romboai",
+  "homepage": "https://Nillkabbo.github.io/testwebsite",
   "dependencies": {
     "@react-google-maps/api": "^2.19.3",
     "@testing-library/jest-dom": "^5.17.0",
